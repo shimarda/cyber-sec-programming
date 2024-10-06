@@ -183,7 +183,6 @@ def client_handler(client_socket):
                 if res:
                     client_socket.send(res)
 
-
             except Exception as e:
                 print(f'server killed {e}')
 
