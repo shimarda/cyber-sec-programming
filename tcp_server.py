@@ -22,6 +22,7 @@ def handle_client(client_socket):
 
     print("[*] Received: %s" % request)
 
+
     #パケットの送信
     client_socket.send(b"ACK")
 
