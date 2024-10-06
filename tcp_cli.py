@@ -1,7 +1,7 @@
 import socket
 
-target_host = "www.google.com"
-target_port = 80
+target_host = "0.0.0.0"
+target_port = 9998
 
 #ソケットオブジェクトの作成
 #AF_INETはIPv4のアドレスやホスト名を使用する設定
@@ -13,7 +13,7 @@ client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client.connect((target_host, target_port))
 
 #データの送信
-client.send("GET / HTTP/1.1\r\nHOST: google.com\r\n\r\n")
+client.send(b"GET / HTTP/1.1\r\nHOST: 0.0.0.0\r\n\r\n")
 
 #データの受信
 response = client.recv(4096)
